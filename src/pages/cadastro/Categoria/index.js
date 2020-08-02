@@ -7,7 +7,7 @@ import Button from '../../../components/Button';
 
 function CadastroCategoria() {
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '#000',
   };
@@ -37,13 +37,13 @@ function CadastroCategoria() {
     setValue(e.target);
   };
 
-  const { nome, descricao, cor } = values;
+  const { titulo, descricao, cor } = values;
 
   return (
     <PageDefault>
       <h1>
         Cadastro de Categoria:
-        {nome}
+        {titulo}
       </h1>
 
       <form onSubmit={(event) => {
@@ -58,8 +58,8 @@ function CadastroCategoria() {
         <FormField
           label="Nome da Categoria"
           type="text"
-          name="nome"
-          value={nome}
+          name="titulo"
+          value={titulo}
           onChange={handleChange}
         />
 
@@ -84,7 +84,7 @@ function CadastroCategoria() {
 
       <ul>
         {categorias.map((categoria) => (
-          <li key={categoria.nome}>{categoria.nome}</li>
+          <li key={`${categoria.titulo}`}>{categoria.titulo}</li>
         ))}
       </ul>
 

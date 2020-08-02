@@ -16,7 +16,7 @@ function CadastroCategoria() {
   const [values, setValues] = useState(valoresIniciais);
 
   useEffect(() => {
-    const URL = 'http://localhost:8080/categorias';
+    const URL = 'https://backend-aluraflix.herokuapp.com/categorias';
     fetch(URL)
       .then(async (respostaDoServidor) => {
         const resposta = await respostaDoServidor.json();
